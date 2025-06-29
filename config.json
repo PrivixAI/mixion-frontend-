@@ -1,0 +1,87 @@
+{
+  "chains": [
+
+    {
+      "chainId": 16969696,
+      "name": "Privix Chain Mainnet",
+      "symbol": "PRIVIX",
+      "rpcUrl": "https://mainnet-rpc.privixchain.xyz",
+      "wsUrl": "wss://mainnet-rpc.privixchain.xyz/ws",
+      "blockExplorerUrl": "https://privixscan.io/",
+      "contractAddress": "0x24D3Ce08366897D460424D6Fe71f751a58DBF259",
+      "tokens": [
+        {
+          "name": "Privix",
+          "symbol": "PRIVIX",
+          "address": "0x0000000000000000000000000000000000000000",
+          "decimals": 18,
+          "logoUri": "https://privixchain.xyz/logo.png"
+        }
+      ]
+    },
+        {
+      "chainId": 1,
+      "name": "Ethereum Mainnet",
+      "symbol": "ETH",
+      "rpcUrl": "https://mainnet.gateway.tenderly.co",
+      "wsUrl": "wss://mainnet.gateway.tenderly.co",
+      "blockExplorerUrl": "https://etherscan.io/",
+      "contractAddress": "0x94B6DD550a5Dd9b039fe8c8424ACde8634797fa1",
+      "tokens": [
+        {
+          "name": "ETH",
+          "symbol": "ETH",
+          "address": "0x0000000000000000000000000000000000000000",
+          "decimals": 18,
+          "logoUri": "https://coin-images.coingecko.com/coins/images/279/small/ethereum.png?1696501628"
+        },
+        {
+          "name": "USDT",
+          "symbol": "USDT",
+          "address": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+          "decimals": 6,
+          "logoUri": "https://assets.coingecko.com/coins/images/325/small/Tether.png?1696501661"
+        }
+      ]
+    },
+    {
+      "chainId": 56,
+      "name": "BNB Smart Chain",
+      "symbol": "BNB",
+      "rpcUrl": "https://bsc-mainnet.infura.io/v3/c6339df148ae4eacaeefdd255e2f165e",
+      "wsUrl": "wss://bsc-mainnet.infura.io/ws/v3/c6339df148ae4eacaeefdd255e2f165e",
+      "blockExplorerUrl": "https://bscscan.com/",
+      "contractAddress": "0x689b4C14AE9bEe1A0Ab4e306925AB7b5A29c1a55",
+      "tokens": [
+        {
+          "name": "BNB",
+          "symbol": "BNB",
+          "address": "0x0000000000000000000000000000000000000000",
+          "decimals": 18,
+          "logoUri": "https://bscscan.com/images/BNB.png"
+        },
+        {
+          "name": "BUSD",
+          "symbol": "BUSD",
+          "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+          "decimals": 18,
+          "logoUri": "https://bscscan.com/token/images/busd_32.png"
+        },
+        {
+          "name": "USDT",
+          "symbol": "USDT",
+          "address": "0x55d398326f99059fF775485246999027B3197955",
+          "decimals": 18,
+          "logoUri": "https://bscscan.com/token/images/busdt_32.png"
+        },
+                {
+          "name": "Binance-Peg SHIBA INU",
+          "symbol": "SHIB",
+          "address": "0x2859e4544C4bB03966803b044A93563Bd2D0DD4D",
+          "decimals": 18,
+          "logoUri": "https://bscscan.com/token/images/shibatoken_32.png"
+        }
+      ]
+    }
+  ]
+}
