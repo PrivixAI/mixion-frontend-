@@ -3,8 +3,8 @@
 import { useRef, useEffect } from "react"
 
 const LetterGlitch = ({
-  glitchColors = ["#2b4539", "#61dca3", "#61b3dc"],
-  glitchSpeed = 50,
+  glitchColors = ["#2b4539", "#61dca1", "#61b3dc", "#00f7ff"],
+  glitchSpeed = 10,
   centerVignette = false,
   outerVignette = true,
   smooth = true,
@@ -29,8 +29,8 @@ const LetterGlitch = ({
   const context = useRef<CanvasRenderingContext2D | null>(null)
   const lastGlitchTime = useRef(Date.now())
 
-  const fontSize = 16
-  const charWidth = 10
+  const fontSize = 24 
+  const charWidth = 20
   const charHeight = 20
 
   const lettersAndSymbols = [
@@ -60,6 +60,7 @@ const LetterGlitch = ({
     "X",
     "Y",
     "Z",
+    "ㅤㅤㅤㅤ",
     "!",
     "@",
     "#",
@@ -274,7 +275,7 @@ const LetterGlitch = ({
   }, [glitchSpeed, smooth])
 
   return (
-    <div className="relative w-full h-full bg-black overflow-hidden">
+   <div className="relative w-full h-full bg-[#000b1f] overflow-hidden">
       <canvas ref={canvasRef} className="block w-full h-full" />
       {outerVignette && (
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none bg-[radial-gradient(circle,_rgba(0,0,0,0)_60%,_rgba(0,0,0,1)_100%)]"></div>

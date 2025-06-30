@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import TrueFocus from "@/components/ui/TrueFocus"
 import LetterGlitch from "@/components/ui/LetterGlitch"
+import DecryptedText from "@/components/decrypt"
+import FuzzyText from "@/components/ui/fuZZTtxt"
 
 export default function LandingPage() {
   const router = useRouter()
@@ -78,13 +80,21 @@ export default function LandingPage() {
               </div>
               <span className="text-2xl font-bold text-white">MixionLocker</span>
             </div>
-            <Button
+            {/* <Button
               onClick={handleGetStarted}
               className="glass-button bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md"
             >
               Get Started
               <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            </Button> */}
+            <Button
+  onClick={handleGetStarted}
+  className="bg-[#001f3f] hover:bg-[#003366] text-white border border-white/10 shadow-md"
+>
+  Get Started
+  <ArrowRight className="w-4 h-4 ml-2" />
+</Button>
+
           </nav>
         </motion.header>
 
@@ -101,24 +111,47 @@ export default function LandingPage() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <TrueFocus
-              sentence="Secure Your Funds with Privacy"
-              borderColor="#61dca3"
-              glowColor="rgba(97, 220, 163, 0.6)"
-              animationDuration={0.8}
-              pauseBetweenAnimations={2}
-              blurAmount={3}
-            />
+<TrueFocus
+  sentence="Secure Your Funds with Privacy"
+  wordColors={{
+    Privacy: "#005eff", // Blue
+    Funds: "#00ffaa",   // Light green
+  }}
+  borderColor="rgb(0,94,255)"
+  glowColor="hsla(231, 95.90%, 47.30%, 0.60)"
+  animationDuration={0.8}
+  pauseBetweenAnimations={2}
+  blurAmount={3}
+/>
+
           </motion.div>
 
-          <motion.p
-            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            Lock and unlock assets anonymously across multiple chains using advanced cryptographic commitments
-          </motion.p>
+{/* <motion.p
+  className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto text-center"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, delay: 0.6 }}
+>
+
+
+    Lock and unlock assets anonymously across multiple chains using advanced cryptographic commitments
+</motion.p> */}
+
+<motion.p
+  className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto text-center transition duration-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]"
+  initial={{ opacity: 0, y: 20, scale: 0.98 }}
+  animate={{ opacity: 1, y: 0, scale: 1 }}
+  transition={{
+    duration: 0.8,
+    delay: 0.6,
+    ease: [0.25, 0.8, 0.25, 1],
+  }}
+>
+  Lock and unlock assets anonymously across multiple chains using advanced cryptographic commitments
+</motion.p>
+
+
+
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,7 +177,19 @@ export default function LandingPage() {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">Why Choose MixionLocker?</h2>
+
+{/* <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+  Why Choose <DecryptedText text="MixionLocker" animateOn="hover" revealDirection="center" />?
+</h2> */}
+<h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+  Why Choose <DecryptedText 
+    text="MixionLocker" 
+    animateOn="hover" 
+    revealDirection="center" 
+    className="text-blue-500" 
+    encryptedClassName="text-green-500"
+  />?
+</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
@@ -156,7 +201,7 @@ export default function LandingPage() {
                 >
                   <Card className="glass-card bg-white/5 border-white/10 backdrop-blur-md hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10">
                     <CardContent className="p-8 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                      <div className="w-16 h-16 bg-[#005eff] rounded-2xl flex items-center justify-center mx-auto mb-6">
                         <feature.icon className="w-8 h-8 text-white" />
                       </div>
                       <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
