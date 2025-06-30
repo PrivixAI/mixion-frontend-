@@ -3,7 +3,7 @@
         {
       "chainId": 96969696,
       "name": "Privix Chain Testnet",
-      "symbol": "PRIVIX",
+      "symbol": "tPRIVIX",
       "rpcUrl": "https://testnet-rpc.privixchain.xyz",
       "wsUrl": "wss://testnet-rpc.privixchain.xyz/ws",
       "blockExplorerUrl": "https://testnet.privixscan.io/",
