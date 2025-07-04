@@ -106,7 +106,11 @@ export default function LockFundsPage() {
       await approveERC20(selectedToken.address, chainConfig.contractAddress, amountWei)
       setNeedsApproval(false)
     } catch (err) {
-      setError(err.message || "Failed to approve token")
+      if (err.code === "ACTION_REJECTED") {
+        setError("Transaction was rejected.")
+      } else {
+        setError(err.message || "Failed to approve token")
+      }
     } finally {
       setIsLoading(false)
     }
@@ -115,14 +119,20 @@ export default function LockFundsPage() {
   const handleLock = async () => {
     if (!selectedToken || !amount) return
 
+    setError("")
+
+    if (useCustomSecret && customSecret.length < 8) {
+      setError("Custom secret must be at least 8 characters long.")
+      return
+    }
+
     setIsLoading(true)
     setLoadingMessage("Locking funds...")
-    setError("")
 
     try {
       // Generate or use custom secret
       const secret = useCustomSecret ? customSecret : generateSecret()
-      const commitment = computeCommitment(secret)
+      const commitment = await computeCommitment(secret)
 
       let txHash
       const amountWei = parseBalance(amount, selectedToken.decimals)
@@ -149,7 +159,14 @@ export default function LockFundsPage() {
       setGeneratedSecret(secret)
       setShowSecretModal(true)
     } catch (err) {
-      setError(err.message || "Failed to lock funds")
+      console.error(err) // Log the full error for debugging
+      if (err.code === "ACTION_REJECTED") {
+        setError("Transaction was rejected.")
+      } else if (err.message && err.message.includes("Commitment already used")) {
+        setError("This secret is already in use. Please try a different one.")
+      } else {
+        setError(err.message || "Failed to lock funds")
+      }
     } finally {
       setIsLoading(false)
     }

@@ -77,14 +77,14 @@ export default function UnlockFundsPage() {
     setFundDetails(null)
 
     try {
-      const nullifier = computeNullifier(secret)
-      const commitment = computeCommitment(secret)
+      const nullifier = await computeNullifier(secret)
+      const commitment = await computeCommitment(secret)
 
       // Check if nullifier is already used
       const used = await isNullifierUsed(nullifier)
       if (used) {
         setNullifierUsed(true)
-        setError("Funds already withdrawn")
+        // setError("Funds already withdrawn")
         return
       }
 
@@ -150,7 +150,11 @@ export default function UnlockFundsPage() {
       // Redirect to dashboard with success message
       router.push("/dashboard?unlocked=true")
     } catch (err) {
-      setError(err.message || "Failed to unlock funds")
+      if (err.code === "ACTION_REJECTED") {
+        setError("Transaction was rejected.")
+      } else {
+        setError(err.message || "Failed to unlock funds")
+      }
     } finally {
       setIsLoading(false)
     }
@@ -334,3 +338,4 @@ export default function UnlockFundsPage() {
     </div>
   )
 }
+
