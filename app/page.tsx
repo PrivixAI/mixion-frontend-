@@ -224,15 +224,6 @@ export default function LandingPage() {
           <div className="max-w-7xl mx-auto border-t border-white/10 pt-8">
             <p className="mb-4">Built with privacy and security in mind</p>
             <div className="flex justify-center space-x-6">
-              <a href="#" className="hover:text-blue-400 transition-colors">
-                Documentation
-              </a>
-              <a href="#" className="hover:text-blue-400 transition-colors">
-                GitHub
-              </a>
-              <a href="#" className="hover:text-blue-400 transition-colors">
-                Support
-              </a>
             </div>
             <p className="mt-4 text-sm">Powered by Privix labs</p>
           </div>
