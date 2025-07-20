@@ -23,8 +23,8 @@
       "chainId": 1,
       "name": "Ethereum Mainnet",
       "symbol": "ETH",
-      "rpcUrl": "https://mainnet.gateway.tenderly.co",
-      "wsUrl": "wss://mainnet.gateway.tenderly.co",
+      "rpcUrl": "https://ethereum-rpc.publicnode.com",
+      "wsUrl": "wss://ethereum-rpc.publicnode.com",
       "blockExplorerUrl": "https://etherscan.io/",
       "contractAddress": "0xC03271F40239944CB99b88903661e6a8F7d173f7",
       "tokens": [
@@ -48,8 +48,8 @@
       "chainId": 56,
       "name": "BNB Smart Chain",
       "symbol": "BNB",
-      "rpcUrl": "https://bsc-mainnet.infura.io/v3/c6339df148ae4eacaeefdd255e2f165e",
-      "wsUrl": "wss://bsc-mainnet.infura.io/ws/v3/c6339df148ae4eacaeefdd255e2f165e",
+      "rpcUrl": "https://bsc-rpc.publicnode.com",
+      "wsUrl": "wss://bsc-rpc.publicnode.com",
       "blockExplorerUrl": "https://bscscan.com/",
       "contractAddress": "0x341652eb70FEDd13EE490280a34e4962239e98e7 ",
       "tokens": [
